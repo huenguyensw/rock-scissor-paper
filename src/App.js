@@ -122,7 +122,7 @@ function App() {
         </div>
       </section>
 
-      {(!playing && numberOfPlays > 0)&&<DisplayResult setPlaying={setPlaying} playScore={playScore} computerScore={computerScore}/>}
+      {(!playing && numberOfPlays > 0)&&<DisplayResult playScore={playScore} computerScore={computerScore}/>}
 
       <button className='btnPlay' onClick={handlePlaying}>{playing ? 'End Game' : 'Play'}</button>
 

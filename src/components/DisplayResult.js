@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const DisplayResult = ({ setPlaying, playScore, computerScore }) => {
+const DisplayResult = ({ playScore, computerScore }) => {
     
     if (playScore == computerScore) {
         return (
