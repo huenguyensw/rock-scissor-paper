@@ -99,7 +99,7 @@ function App() {
         <p>Time passed: {minutes}:{seconds < 10 ? '0' + seconds : seconds}:{mseconds < 10 ? '0' + mseconds : mseconds}</p>
         <p>Number of plays: {numberOfPlays}</p>
       </section>
-      <button className='btnPlay' onClick={handlePlaying}>{playing ? 'End Game' : 'Play'}</button>
+      
       <section className='playing-container'>
         <div >
           {playerName == "" ? <h2>Username</h2> : <h2>{playerName}</h2>}
@@ -121,6 +121,8 @@ function App() {
           <p>Computer score: {computerScore}</p>
         </div>
       </section>
+
+      <button className='btnPlay' onClick={handlePlaying}>{playing ? 'End Game' : 'Play'}</button>
 
     </div>
   );
