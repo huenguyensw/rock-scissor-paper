@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandRock } from '@fortawesome/free-regular-svg-icons'
 import { faScissors } from '@fortawesome/free-solid-svg-icons';
 import { faHandPaper } from '@fortawesome/free-regular-svg-icons';
+import DisplayResult from './components/DisplayResult';
 
 
 
@@ -16,7 +17,6 @@ function App() {
   const [startTime, setStartTime] = useState(null);
   const [now, setNow] = useState(null);
   const [playing, setPlaying] = useState(false);
-  const [started, setStarted] = useState(false);
   const [numberOfPlays, setNumberOfPlays] = useState(0);
 
   const IDTimer = useRef(null);
@@ -65,10 +65,20 @@ function App() {
 
 
   const handlePlaying = () => {
-    setStarted(true);
+    if(!playing){
+      setComputerScore(0);
+      setPlayScore(0);
+      setNumberOfPlays(0);
+      secondspassed = 0 ;
+      setPlayChoice(null);
+      setComputerChoice(4);
+
+    }
     setPlaying(!playing);
     handlePlayingTime();
   }
+
+  
 
   let secondspassed = 0;
   if (startTime != null && now != null) {
@@ -80,17 +90,7 @@ function App() {
   const mseconds = secondspassed - (minutes * 3600) - (seconds * 60);
 
 
-  if (!playing && started) {
-    if (playScore == computerScore) {
-      return (
-        <h1 className='resultMessage'>Draw match!</h1>
-      )
-    } else if (playScore > computerScore) {
-      return <h1 className='resultMessage'>Congras. You won!</h1>
-    } else {
-      return <h1 className='resultMessage'>Regret! You lost. Try next time</h1>
-    }
-  }
+  
   return (
     <div className="App">
       <h1 id='title' className='flicker-text'>Rock Scissor Paper</h1>
@@ -104,9 +104,9 @@ function App() {
         <div >
           {playerName == "" ? <h2>Username</h2> : <h2>{playerName}</h2>}
           <section className='playing-icons'>
-            <FontAwesomeIcon icon={faHandRock} size='3x' style={{ color: playChoice == 0 && 'orange' }} onClick={() => handleClick(0)} />
-            <FontAwesomeIcon icon={faScissors} size='3x' style={{ color: playChoice == 1 && 'orange' }} onClick={() => handleClick(1)} />
-            <FontAwesomeIcon icon={faHandPaper} size='3x' style={{ color: playChoice == 2 && 'orange' }} onClick={() => handleClick(2)} />
+            <FontAwesomeIcon icon={faHandRock} size='3x' style={{ color: playChoice == 0 && 'orange', pointerEvents: !playing ? 'none' : 'auto' }} onClick={() => handleClick(0)}/>
+            <FontAwesomeIcon icon={faScissors} size='3x' style={{ color: playChoice == 1 && 'orange', pointerEvents: !playing ? 'none' : 'auto' }} onClick={() => handleClick(1)} />
+            <FontAwesomeIcon icon={faHandPaper} size='3x' style={{ color: playChoice == 2 && 'orange', pointerEvents: !playing ? 'none' : 'auto' }} onClick={() => handleClick(2)} />
           </section>
 
           <p>Your score: {playScore}</p>
@@ -114,13 +114,15 @@ function App() {
         <div>
           <h2>Computer</h2>
           <section className='playing-icons'>
-            <FontAwesomeIcon icon={faHandRock} size='3x' style={{ color: computerChoice == 0 && 'orange' }} />
-            <FontAwesomeIcon icon={faScissors} size='3x' style={{ color: computerChoice == 1 && 'orange' }} />
-            <FontAwesomeIcon icon={faHandPaper} size='3x' style={{ color: computerChoice == 2 && 'orange' }} />
+            <FontAwesomeIcon icon={faHandRock} size='3x' style={{ color: computerChoice == 0 && 'orange', pointerEvents: !playing ? 'none' : 'auto' }} />
+            <FontAwesomeIcon icon={faScissors} size='3x' style={{ color: computerChoice == 1 && 'orange', pointerEvents: !playing ? 'none' : 'auto' }} />
+            <FontAwesomeIcon icon={faHandPaper} size='3x' style={{ color: computerChoice == 2 && 'orange', pointerEvents: !playing ? 'none' : 'auto' }} />
           </section>
           <p>Computer score: {computerScore}</p>
         </div>
       </section>
+
+      {(!playing && numberOfPlays > 0)&&<DisplayResult setPlaying={setPlaying} playScore={playScore} computerScore={computerScore}/>}
 
       <button className='btnPlay' onClick={handlePlaying}>{playing ? 'End Game' : 'Play'}</button>
 
