@@ -102,7 +102,7 @@ function App() {
       
       <section className='playing-container'>
         <div >
-          {playerName == "" ? <h2>Username</h2> : <h2>{playerName}</h2>}
+          <h2 id='username'>{playerName == "" ? 'Username': playerName}</h2>
           <section className='playing-icons'>
             <FontAwesomeIcon icon={faHandRock} size='3x' style={{ color: playChoice == 0 && 'orange', pointerEvents: !playing ? 'none' : 'auto' }} onClick={() => handleClick(0)}/>
             <FontAwesomeIcon icon={faScissors} size='3x' style={{ color: playChoice == 1 && 'orange', pointerEvents: !playing ? 'none' : 'auto' }} onClick={() => handleClick(1)} />
@@ -124,7 +124,7 @@ function App() {
 
       {(!playing && numberOfPlays > 0)&&<DisplayResult playScore={playScore} computerScore={computerScore}/>}
 
-      <button className='btnPlay' onClick={handlePlaying}>{playing ? 'End Game' : 'Play'}</button>
+      <button className='btnPlay' onClick={handlePlaying} name={playing ? 'End Game' : 'Play'}>{playing ? 'End Game' : 'Play'}</button>
 
     </div>
   );
