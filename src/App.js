@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -21,7 +20,7 @@ function App() {
   const [numberOfPlays, setNumberOfPlays] = useState(0);
 
   const IDTimer = useRef(null);
-  
+
 
   //handle playing time
   const handlePlayingTime = () => {
@@ -49,7 +48,7 @@ function App() {
 
   const handleClick = (val) => {
     setPlayChoice(val);
-    setNumberOfPlays(numberOfPlays+1);
+    setNumberOfPlays(numberOfPlays + 1);
     const randomInt = Math.floor(Math.random() * 3);
     setComputerChoice(randomInt);
     console.log(randomInt)
@@ -72,13 +71,13 @@ function App() {
   }
 
   let secondspassed = 0;
-  if(startTime != null && now != null){
-        secondspassed = now - startTime;
+  if (startTime != null && now != null) {
+    secondspassed = now - startTime;
   }
 
-  const hours = Math.floor(secondspassed / 3600);
-  const minutes = Math.floor((secondspassed - (hours * 3600)) / 60);
-  const seconds = secondspassed - (hours * 3600) - (minutes * 60);
+  const minutes = Math.floor(secondspassed / 3600);
+  const seconds = Math.floor((secondspassed - (minutes * 3600)) / 60);
+  const mseconds = secondspassed - (minutes * 3600) - (seconds * 60);
 
 
   if (!playing && started) {
@@ -89,7 +88,7 @@ function App() {
     } else if (playScore > computerScore) {
       return <h1 className='resultMessage'>Congras. You won!</h1>
     } else {
-      return <h1 className='resultMessage'>Regret! you lost. Try next time</h1>
+      return <h1 className='resultMessage'>Regret! You lost. Try next time</h1>
     }
   }
   return (
@@ -97,7 +96,7 @@ function App() {
       <h1 id='title' className='flicker-text'>Rock Scissor Paper</h1>
       <section className='Header'>
         <input id='inputField' type='text' value={playerName} onChange={handleChange} placeholder='Enter user name' />
-        <p>Time passed: {hours}:{minutes < 10 ? '0' + minutes : minutes}:{seconds < 10 ? '0' + seconds : seconds}</p>
+        <p>Time passed: {minutes}:{seconds < 10 ? '0' + seconds : seconds}:{mseconds < 10 ? '0' + mseconds : mseconds}</p>
         <p>Number of plays: {numberOfPlays}</p>
       </section>
       <button className='btnPlay' onClick={handlePlaying}>{playing ? 'End Game' : 'Play'}</button>
