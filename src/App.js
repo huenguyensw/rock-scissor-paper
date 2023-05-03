@@ -84,10 +84,7 @@ function App() {
   if (!playing && started) {
     if (playScore == computerScore) {
       return (
-        <>
         <h1 className='resultMessage'>Draw match!</h1>
-        <button>Try again</button>
-        </>
       )
     } else if (playScore > computerScore) {
       return <h1 className='resultMessage'>Congras. You won!</h1>
