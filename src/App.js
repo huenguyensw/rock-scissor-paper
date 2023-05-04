@@ -104,9 +104,9 @@ function App() {
         <div >
           <h2 id='username'>{playerName == "" ? 'Username': playerName}</h2>
           <section className='playing-icons'>
-            <FontAwesomeIcon icon={faHandRock} size='3x' style={{ color: playChoice == 0 && 'orange', pointerEvents: !playing ? 'none' : 'auto' }} onClick={() => handleClick(0)}/>
-            <FontAwesomeIcon icon={faScissors} size='3x' style={{ color: playChoice == 1 && 'orange', pointerEvents: !playing ? 'none' : 'auto' }} onClick={() => handleClick(1)} />
-            <FontAwesomeIcon icon={faHandPaper} size='3x' style={{ color: playChoice == 2 && 'orange', pointerEvents: !playing ? 'none' : 'auto' }} onClick={() => handleClick(2)} />
+            <FontAwesomeIcon icon={faHandRock} size='3x' style={{ color: playChoice == 0 && 'orange'}} className={playing? 'icons-active':'icons-deactive'} onClick={() => handleClick(0)}/>
+            <FontAwesomeIcon icon={faScissors} size='3x' style={{ color: playChoice == 1 && 'orange'}} className={playing? 'icons-active':'icons-deactive'} onClick={() => handleClick(1)} />
+            <FontAwesomeIcon icon={faHandPaper} size='3x' style={{ color: playChoice == 2 && 'orange'}} className={playing? 'icons-active':'icons-deactive'} onClick={() => handleClick(2)} />
           </section>
 
           <p>Your score: {playScore}</p>
@@ -114,9 +114,9 @@ function App() {
         <div>
           <h2>Computer</h2>
           <section className='playing-icons'>
-            <FontAwesomeIcon icon={faHandRock} size='3x' style={{ color: computerChoice == 0 && 'orange', pointerEvents: !playing ? 'none' : 'auto' }} />
-            <FontAwesomeIcon icon={faScissors} size='3x' style={{ color: computerChoice == 1 && 'orange', pointerEvents: !playing ? 'none' : 'auto' }} />
-            <FontAwesomeIcon icon={faHandPaper} size='3x' style={{ color: computerChoice == 2 && 'orange', pointerEvents: !playing ? 'none' : 'auto' }} />
+            <FontAwesomeIcon icon={faHandRock} size='3x' style={{ color: computerChoice == 0 && 'orange'}}  />
+            <FontAwesomeIcon icon={faScissors} size='3x' style={{ color: computerChoice == 1 && 'orange'}}  />
+            <FontAwesomeIcon icon={faHandPaper} size='3x' style={{ color: computerChoice == 2 && 'orange'}} />
           </section>
           <p>Computer score: {computerScore}</p>
         </div>

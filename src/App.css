@@ -89,3 +89,9 @@ h2, p{
   color: rgb(230, 49, 218);
   font-size: 3rem;
 }
+.icons-deactive{
+  pointer-events: none;
+}
+.icons-active{
+  pointer-events: auto;
+}
