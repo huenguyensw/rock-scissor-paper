@@ -16,7 +16,7 @@ describe('test App',()=>{
     expect(headerElement).toHaveTextContent('Rock Scissor Paper')
     
   })
-  test('username is displayed correctly', ()=>{
+  test('username should be displayed correctly', ()=>{
     //Given
     const username = 'Hanna'
 
