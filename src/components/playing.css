@@ -1,0 +1,57 @@
+.playing-container{
+    display: flex;
+    flex-direction: row;
+   justify-content: space-evenly;
+    align-items:first baseline;
+}
+.computer-container{
+    display: flex;
+    flex-direction: column;
+    border: 0.8px solid beige;
+    border-radius: 4px;
+    align-items: center;
+    padding: 0 30px 30px 30px;
+}
+h2{
+    text-align: center;
+}
+.backToHome{
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: white;
+}
+.playAgainBtn{
+    width: 7rem;
+    height: 1.6rem;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.buttons{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-around;
+}
+img{
+    border: none;
+    width: 130px;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .player-container{
+    display: flex;
+    flex-direction: column;
+    border: 0.8px solid beige;
+    border-radius: 4px;
+    align-items: center;
+    padding: 0 30px 20px 30px;
+    margin-top: 30px;
+  }

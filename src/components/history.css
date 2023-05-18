@@ -1,0 +1,19 @@
+.history th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(30, 118, 242); /* Table header color */
+    color: #ffffff; /* Table header text color */
+  }
+  
+  .history td,
+  .history th {
+    border: 1px solid #000000;
+    padding: 8px;
+  }
+
+  /* Styles for the history container */
+.history-container {
+    margin: 0 auto;
+  }
+  
