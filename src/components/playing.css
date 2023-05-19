@@ -4,6 +4,10 @@
    justify-content: space-between;
     column-gap: 10px;
     align-items: center;
+    @media (max-width: 514px){
+        flex-direction: column;
+        align-items: center;
+    };
 }
 .computer-container{
     display: flex;
