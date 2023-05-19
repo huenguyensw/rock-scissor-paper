@@ -3,7 +3,7 @@ import './selection.css'
 import { useOutletContext } from 'react-router-dom'
 
 const Selection = ({ player, choiced }) => {
-    const { results, setResults, gameMode, setUpdateResult,updateResult } = useOutletContext();
+    const { results, setResults, gameMode, setUpdateResult } = useOutletContext();
     const [picked, setPicked] = useState(false);
 
     const handleSelection = (val) => {
@@ -12,13 +12,13 @@ const Selection = ({ player, choiced }) => {
         setResults(results);
         choiced.current = choiced.current + 1;
         setUpdateResult(false);
-        if (gameMode == '1') {
+        if (gameMode === '1') {
             const randomInt = Math.floor(Math.random() * 3);
             results['Computer'] = (results['Computer'] || []).concat([randomInt]);
             setResults(results);
             setUpdateResult(true);
         }
-        if (gameMode == '2' && choiced.current == 2) {
+        if (gameMode === '2' && choiced.current === 2) {
             choiced.current = 0;
             setUpdateResult(true);
             
@@ -27,7 +27,7 @@ const Selection = ({ player, choiced }) => {
     return (
         <div className='player-container'>
             <h2>{player}</h2>
-            {(gameMode == '2' && picked)
+            {(gameMode === '2' && picked)
             ? (<p>Picked</p>)
             :
             (<div className='selection-container'>
