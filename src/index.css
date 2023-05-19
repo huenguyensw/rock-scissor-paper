@@ -11,16 +11,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: white;
   max-width: 720px;
-  width: 100%;
-  @media (max-width: 768px) {
-    /* Styles applied when the viewport width is 768px or less */
-    width: 80%;
-  }
-
-  @media (max-width: 480px) {
-    /* Styles applied when the viewport width is 480px or less */
-    width: 60%;
-  }
+  
 }
 
 code {
