@@ -5,13 +5,19 @@
   }
   .iconBtn img{
     border: none;
-    width: 68px;
+    width: 58px;
     object-fit: cover;
+    @media (min-width: 1025px){
+      width: 68px;
+  };
   }
   .selection-container{
     display: flex;
     flex-direction: row;
-    column-gap: 10px;
+    column-gap: 6px;
+    @media (min-width: 1025px){
+      width: 10px;
+  };
   }
   .player-container{
     display: flex;
