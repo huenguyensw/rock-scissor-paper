@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import "./root.css"
 
 const Root = () => {
-    const [gameMode, setGameMode] = useState(1);
+    const [gameMode, setGameMode] = useState('1');
     const [player1, setPlayer1] = useState('Hanna');
     const [player2, setPlayer2] = useState('Maria');
     const [results, setResults] = useState({});

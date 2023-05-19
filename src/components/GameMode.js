@@ -33,7 +33,7 @@ const GameMode = () => {
         </select>
       </div>
       <div>
-        {gameMode==='1'?'Enter player name:':'Enter player 1:'}<span> </span>
+        {gameMode === '1'?'Enter player name:':'Enter player 1:'}<span> </span>
         <input type='text' value={player1} onChange={handleNameOfPlayer1} />
       </div>
       {gameMode === '2' &&
