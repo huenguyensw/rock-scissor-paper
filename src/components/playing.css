@@ -1,6 +1,6 @@
 .playing-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     column-gap: 10px;
     align-items: center;
