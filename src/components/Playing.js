@@ -46,9 +46,9 @@ const Playing = () => {
             <div className='playing-container'>
               <div className='player-container' >
                 <h2>{keys[0]}</h2>
-                {results[keys[0]][results[keys[0]].length - 1] === '0'
+                {results[keys[0]][results[keys[0]].length - 1] === 0
                   ? <img src='../rock.png' alt='rockimage' />
-                  : results[keys[0]][results[keys[0]].length - 1] === '1'
+                  : results[keys[0]][results[keys[0]].length - 1] === 1
                     ? <img src='../paper.png' alt='paperimage' />
                     : <img src='../scissor.png' alt='scissorimage' />}
               </div>
@@ -74,9 +74,9 @@ const Playing = () => {
               </motion.h3>
               <div className='player-container' >
                 <h2>{keys[1]}</h2>
-                {results[keys[1]][results[keys[1]].length - 1] === '0'
+                {results[keys[1]][results[keys[1]].length - 1] === 0
                   ? <img src='../rock.png' alt='rockimage' />
-                  : results[keys[1]][results[keys[1]].length - 1] === '1'
+                  : results[keys[1]][results[keys[1]].length - 1] === 1
                     ? <img src='../paper.png' alt='paperimage' />
                     : <img src='../scissor.png' alt='scissorimage' />}
               </div>
@@ -85,9 +85,9 @@ const Playing = () => {
             <div className='playing-container'>
               <div className='player-container' >
                 <h2>{keys[1]}</h2>
-                {results[keys[1]][results[keys[1]].length - 1] === '0'
+                {results[keys[1]][results[keys[1]].length - 1] === 0
                   ? <img src='../rock.png' alt='rockimage' />
-                  : results[keys[1]][results[keys[1]].length - 1] === '1'
+                  : results[keys[1]][results[keys[1]].length - 1] === 1
                     ? <img src='../paper.png' alt='paperimage' />
                     : <img src='../scissor.png' alt='scissorimage' />}
               </div>
@@ -113,9 +113,9 @@ const Playing = () => {
               </motion.h3>
               <div className='player-container'>
                 <h2>{keys[0]}</h2>
-                {results[keys[0]][results[keys[0]].length - 1] === '0'
+                {results[keys[0]][results[keys[0]].length - 1] === 0
                   ? <img src='../rock.png' alt='rockimage' />
-                  : results[keys[0]][results[keys[0]].length - 1] === '1'
+                  : results[keys[0]][results[keys[0]].length - 1] === 1
                     ? <img src='../paper.png' alt='paperimage' />
                     : <img src='../scissor.png' alt='scissorimage' />}
               </div>
