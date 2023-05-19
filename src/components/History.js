@@ -11,8 +11,7 @@ const History = () => {
 
   if (keys.length > 1) {
 
-    results[keys[0]].map((val, idx) => {
-      console.log(val);
+    results[keys[0]].map(( val,idx) => {
       const val1 = results[keys[0]][results[keys[0]].length - length + idx];
       const val2 = results[keys[1]][results[keys[1]].length - length + idx];
       if (val1 === val2 + 1 || val1 === val2 - 2) {
@@ -20,6 +19,7 @@ const History = () => {
       } else if (val2 === val1 + 1 || val2 === val1 - 2) {
         player2Total += 1;
       }
+    return null;
     })
   }
 
