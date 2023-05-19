@@ -8,7 +8,7 @@
 body {
   margin: auto;
   width: 720px;
-  background: linear-gradient(to right, #4157d3 , #eb2b2b ); /* Gradient background */
+   /* Gradient background */
   font-family: 'Montserrat', sans-serif;
   color: white;
 }
