@@ -5,6 +5,6 @@ h1{
     margin-bottom: 50px;
 }
 .root{
-    background: linear-gradient(to right, #4157d3 , #eb2b2b );
+    background: linear-gradient(to right, #4157d3 , rgb(229, 118, 49) );
     padding: 30px 40px;
 }
