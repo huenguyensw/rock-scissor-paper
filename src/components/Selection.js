@@ -24,8 +24,6 @@ const Selection = ({ player, choiced }) => {
             
         }
     }
-    console.log(gameMode);
-    console.log(updateResult);
     return (
         <div className='player-container'>
             <h2>{player}</h2>
