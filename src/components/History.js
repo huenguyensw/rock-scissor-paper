@@ -12,6 +12,7 @@ const History = () => {
   if (keys.length > 1) {
 
     results[keys[0]].map((val, idx) => {
+      console.log(val);
       const val1 = results[keys[0]][results[keys[0]].length - length + idx];
       const val2 = results[keys[1]][results[keys[1]].length - length + idx];
       if (val1 === val2 + 1 || val1 === val2 - 2) {
