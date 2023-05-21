@@ -6,7 +6,8 @@ h1 {
 }
 
 .root{
-    background: linear-gradient(to right, #4157d3 , rgb(118, 99, 99));
+    background: linear-gradient(to right, #4157d3 , rgb(189, 184, 184));
     padding: 30px 40px;
+    border-radius: 10px;
     
 }
